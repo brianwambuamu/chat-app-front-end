@@ -19,23 +19,23 @@ function Signup(){
     const navigate = useNavigate()
 
     // Go to home if in session even when one pastes the path GET /signup
-    // useEffect(() => {
-    //     const localStorageMe = JSON.parse(localStorage.getItem("me"))
+    useEffect(() => {
+        const localStorageMe = JSON.parse(localStorage.getItem("me"))
 
-    //     if(localStorageMe){
-    //         fetch(`http://localhost:3000/users/${localStorageMe.id}`)
-    //             .then(res => {
-    //                 if (res.status == 200) {
-    //                     res.json().then(data => {
-    //                         localStorage.setItem("me", JSON.stringify(data))
-    //                         setMe(data)
-    //                         localStorage.setItem("allUsers", JSON.stringify([]))
-    //                         navigate('/home')
-    //                     })
-    //                 }
-    //             })
-    //     }
-    // }, [])
+        if(localStorageMe){
+            fetch(`/users/${localStorageMe.id}`)
+                .then(res => {
+                    if (res.status == 200) {
+                        res.json().then(data => {
+                            localStorage.setItem("me", JSON.stringify(data))
+                            setMe(data)
+                            localStorage.setItem("allUsers", JSON.stringify([]))
+                            navigate('/home')
+                        })
+                    }
+                })
+        }
+    }, [])
 
     function handleInputChange(e){
         setUserInfo(userInfo => ({...userInfo, [e.target.name]: e.target.value}))
@@ -45,7 +45,7 @@ function Signup(){
         e.preventDefault()
         setSubmitting(true)
         
-        fetch('http://localhost:3000/signup', {
+        fetch('/signup', {
             method: 'POST',
             headers: {"Content-Type": "application/json", "Accept": "application/json"},
             body: JSON.stringify(userInfo)
