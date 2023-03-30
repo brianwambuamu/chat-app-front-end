@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import { userDetails } from "./UserDetailsContextProvider";
-import "../css/now-chatting.css"
+// import "../css/now-chatting.css"
 
 function NowChatting({desktopView}){
     const {me, they} = useContext(userDetails)

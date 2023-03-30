@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 import { userDetails } from "./UserDetailsContextProvider";
-import "../css/message-input-form.css"
+// import "../css/message-input-form.css"
 
 function MessageInputForm(){
     const { me, they, setMessages} = useContext(userDetails)
@@ -9,13 +9,13 @@ function MessageInputForm(){
     const [messageContent, setMessageContent] = useState("")
 
     function updateMessages(newMessage){
-        fetch('https://chat-app-back-end-production.up.railway.app/messages', {
+        fetch('/messages', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify(newMessage)
         })
             .then(res => {
-                if (res.status == 201) {
+                if (res.status === 201) {
                     res.json().then(data => {
                         setSending(false)
                         setMessageContent("")

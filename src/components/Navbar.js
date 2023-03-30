@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { userDetails } from "./UserDetailsContextProvider";
 import {useNavigate } from "react-router-dom"
-import "../css/navbar.css"
+// import "../css/navbar.css"
 
 function Navbar(){
     const {me, setMe} = useContext(userDetails)
@@ -13,12 +13,12 @@ function Navbar(){
 
     function logOut(){
         if (JSON.parse(localStorage.getItem("loggedIn"))){
-            fetch('http://localhost:3000/logout', {
+            fetch('/logout', {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
             })
             .then(res => {
-                if(res.status == 204){
+                if(res.status === 204){
                     clearInterval(JSON.parse(localStorage.getItem("intervalId")))
                     localStorage.removeItem("intervalId")
                     localStorage.removeItem("they")

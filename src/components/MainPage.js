@@ -5,7 +5,7 @@ import Contacts from "./Contacts";
 import ChatsContainer from "./ChatsContainer";
 import NowChatting from "./NowChatting";
 
-import "../css/main-body.css"
+// import "../css/main-body.css"
 
 function MainPage(){
     const {me, setMe, they, setThey, setAllUsers, allUsers, setMessages} = useContext(userDetails)
@@ -18,9 +18,9 @@ function MainPage(){
         const localStorageMe = JSON.parse(localStorage.getItem("me"))
 
         if (localStorage.getItem("loggedIn")) {
-            fetch(`https://chat-app-back-end-production.up.railway.app/users/${localStorageMe.id}`, { mode: 'cors' })
+            fetch(`/users/${localStorageMe.id}`, { mode: 'cors' })
                 .then(res => {
-                    if (res.status == 200) {
+                    if (res.status === 200) {
                         res.json().then(data => {
                             localStorage.setItem("me", JSON.stringify(data))
                             navigate('/home')
@@ -43,9 +43,9 @@ function MainPage(){
 
         const intervalId = setInterval(() => {
             if (localStorage.getItem("loggedIn")){
-                fetch(`https://chat-app-back-end-production.up.railway.app/users/${localStorageMe.id}`)
+                fetch(`/users/${localStorageMe.id}`)
                     .then(res => {
-                        if (res.status == 200) {
+                        if (res.status === 200) {
                             res.json().then(data => {
                                 setMe(data)
 
@@ -92,7 +92,7 @@ function MainPage(){
     window.addEventListener('resize', handleResize)
     
     async function getAllUsers() {
-        const res = await fetch('https://chat-app-back-end-production.up.railway.app/users', {mode: "cors"})
+        const res = await fetch('/users', {mode: "cors"})
             .then(res => res.json())
 
         return res
@@ -101,7 +101,7 @@ function MainPage(){
     function handleChatWith(newChatMateId){
 
         setThey(they => {
-            const newThey = allUsers.find(user => user.id == newChatMateId)
+            const newThey = allUsers.find(user => user.id === newChatMateId)
             localStorage.setItem("they", JSON.stringify(newThey))
             return newThey
         })

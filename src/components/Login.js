@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from "react";
 import { useNavigate } from 'react-router-dom'
 import { userDetails } from './UserDetailsContextProvider'
-import "../css/login-form.css"
+// import "../css/login-form.css"
 
 function Login() {
     const defaultState = {
@@ -17,9 +17,9 @@ function Login() {
         const localStorageMe = JSON.parse(localStorage.getItem("me"))
 
         if(localStorageMe){
-            fetch(`http://localhost:3000/users/${localStorageMe.id}`, {mode: 'cors'})
+            fetch(`/users/${localStorageMe.id}`, {mode: 'cors'})
             .then(res => {
-                if(res.status == 200){
+                if(res.status === 200){
                     res.json().then(data => {
                         localStorage.setItem("me", JSON.stringify(data))
                         navigate('/home')
@@ -35,13 +35,13 @@ function Login() {
     }
 
     function login(){
-        fetch('http://localhost:3000/login', {
+        fetch('/login', {
             method: 'POST',
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
             body: JSON.stringify(userInfo)
         })
             .then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     res.json().then(data => {
                         setSubmitting(false)
                         localStorage.setItem("me", JSON.stringify(data))
@@ -49,7 +49,7 @@ function Login() {
                         localStorage.setItem("loggedIn", true)
                         navigate('/home')
                     })
-                } else if (res.status == 401) {
+                } else if (res.status === 401) {
                     alert("Invalid username or password!")
                 } else {
                     alert("An error occurred. Try again later")

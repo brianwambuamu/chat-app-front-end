@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect} from "react";
 import { userDetails } from "./UserDetailsContextProvider";
 import Contact from "./Contact"
 import SearchUser from "./SearchUser";
-import "../css/contacts.css"
+// import "../css/contacts.css"
 
 function Contacts({onChatWith, showContacts, desktopView, toggleItemToShow, clientHeight}){
     const {me} = useContext(userDetails)
@@ -17,12 +17,12 @@ function Contacts({onChatWith, showContacts, desktopView, toggleItemToShow, clie
                 return contactArray
             })
         }
-    }, [me])
+    }, [me ])
 
     function uniqueContacts(contactArray){
         let existingContactIds = []
         return contactArray.filter(contact => {
-            if (!existingContactIds.includes(contact.userId) && contact.userId != me.id){
+            if (!existingContactIds.includes(contact.userId) && contact.userId !== me.id){
                 existingContactIds.push(contact.userId)
                 return true
             }else{
@@ -32,12 +32,12 @@ function Contacts({onChatWith, showContacts, desktopView, toggleItemToShow, clie
     }
 
     function filterOut(contacts, me){
-        return contacts.filter(message => message.userId != me.id)
+        return contacts.filter(message => message.userId !== me.id)
     }
 
     function createContacts(messages){
         const contacts = messages.map(message => {
-                if (message.receiver == me.id) {
+                if (message.receiver === me.id) {
                     return {
                         fullName: message.sender_full_name,
                         username: message.sender_username,
