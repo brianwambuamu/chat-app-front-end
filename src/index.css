@@ -1,4 +1,54 @@
-@media screen and (min-width: 1440) {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+#login-container {
+  background-image: url('/src/Assets/pexels-nappy-935985.jpg');
+  background-size: cover; /* scale the image to cover the entire container */
+  background-position: center; /* center the image within the container */
+}
+
+
+#signup-container {
+  background-image: url('/src/Assets/image2.jpg');
+  background-size: cover; /* scale the image to cover the entire container */
+  background-position: center; /* center the image within the container */
+}
+
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heartbeat {
+  animation-name: heartbeat;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+
+.signup {
+  background: rgba(255, 255, 255, 0.8); /* set the background color with transparency */
+  backdrop-filter: blur(10px); /* apply a blur effect */
+}
+
+/* @media screen and (min-width: 1440) {
   :root {
     font-size: 1.2rem;
   }
@@ -48,4 +98,4 @@ opacity: 0.8;
 
 .display-none {
 display: none;
-}
+} */
