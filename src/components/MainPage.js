@@ -5,7 +5,7 @@ import Contacts from "./Contacts";
 import ChatsContainer from "./ChatsContainer";
 import NowChatting from "./NowChatting";
 
-// import "../css/main-body.css"
+ import "../css/main-body.css"
 
 function MainPage(){
     const {me, setMe, they, setThey, setAllUsers, allUsers, setMessages} = useContext(userDetails)
@@ -18,7 +18,7 @@ function MainPage(){
         const localStorageMe = JSON.parse(localStorage.getItem("me"))
 
         if (localStorage.getItem("loggedIn")) {
-            fetch(`/users/${localStorageMe.id}`, { mode: 'cors' })
+            fetch(`http://localhost:3000/users/${localStorageMe.id}`, { mode: 'cors' })
                 .then(res => {
                     if (res.status === 200) {
                         res.json().then(data => {

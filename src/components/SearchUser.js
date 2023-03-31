@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect} from "react";
 import { userDetails } from "./UserDetailsContextProvider";
-// import "../css/search-user.css"
+import "../css/search-user.css"
 
 function SearchUser({ onChatWith, toggleItemToShow, clientHeight }){
     const {allUsers} = useContext(userDetails)
@@ -9,7 +9,7 @@ function SearchUser({ onChatWith, toggleItemToShow, clientHeight }){
         allUsers ? allUsers.slice(0, maxUsersToShow()): [])
 
     useEffect(()=>{
-        fetch('/users')
+        fetch('http://localhost:3000/users')
         .then(res => {
             if(res.status === 200){
                 res.json().then(data => {

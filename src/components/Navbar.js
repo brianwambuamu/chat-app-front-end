@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { userDetails } from "./UserDetailsContextProvider";
 import {useNavigate } from "react-router-dom"
-// import "../css/navbar.css"
+import "../css/navbar.css"
 
 function Navbar(){
     const {me, setMe} = useContext(userDetails)
@@ -13,7 +13,7 @@ function Navbar(){
 
     function logOut(){
         if (JSON.parse(localStorage.getItem("loggedIn"))){
-            fetch('/logout', {
+            fetch('http://localhost:3000/logout', {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
             })

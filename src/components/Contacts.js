@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect} from "react";
 import { userDetails } from "./UserDetailsContextProvider";
 import Contact from "./Contact"
 import SearchUser from "./SearchUser";
-// import "../css/contacts.css"
+import "../css/contacts.css"
 
 function Contacts({onChatWith, showContacts, desktopView, toggleItemToShow, clientHeight}){
     const {me} = useContext(userDetails)

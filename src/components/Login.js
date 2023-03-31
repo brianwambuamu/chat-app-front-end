@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from "react";
 import { useNavigate } from 'react-router-dom'
 import { userDetails } from './UserDetailsContextProvider'
-// import "../css/login-form.css"
+import "../css/login-form.css"
 
 function Login() {
     const defaultState = {
@@ -17,7 +17,7 @@ function Login() {
         const localStorageMe = JSON.parse(localStorage.getItem("me"))
 
         if(localStorageMe){
-            fetch(`/users/${localStorageMe.id}`, {mode: 'cors'})
+            fetch(`http://localhost:3000/users/${localStorageMe.id}`, {mode: 'cors'})
             .then(res => {
                 if(res.status === 200){
                     res.json().then(data => {
@@ -35,7 +35,7 @@ function Login() {
     }
 
     function login(){
-        fetch('/login', {
+        fetch('http://localhost:3000//login', {
             method: 'POST',
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
             body: JSON.stringify(userInfo)

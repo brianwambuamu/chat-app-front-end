@@ -1,6 +1,6 @@
 import React, {useContext, useRef, useState} from "react";
 import { userDetails } from "./UserDetailsContextProvider";
-// import "../css/chat.css"
+import "../css/chat.css"
 
 function Chat({message}){
     const [currentState, setCurrentState] = useState({messageContent: message.content, editing: false})
@@ -42,7 +42,7 @@ function Chat({message}){
     }
 
     function handleDelete(){
-        fetch(`/messages/${message.id}`, {
+        fetch(`http://localhost:3000/messages/${message.id}`, {
             method: 'DELETE',
             headers: {"Content-Type": "application/json", "Accept": "application/json"},
         })
@@ -50,7 +50,7 @@ function Chat({message}){
 
     function updateMessage(){
 
-        fetch(`/messages/${message.id}`, {
+        fetch(`http://localhost:3000/messages/${message.id}`, {
             method: 'PATCH',
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
             body: JSON.stringify({content: currentState.messageContent})

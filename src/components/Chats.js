@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import Chat from "./Chat";
 import {userDetails} from "./UserDetailsContextProvider"
-// import "../css/chats.css"
+import "../css/chats.css"
 
 function Chats(){
     const {messages, me, they} = useContext(userDetails)

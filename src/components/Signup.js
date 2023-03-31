@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect} from "react";
 import {useNavigate} from 'react-router-dom'
-// import "../css/login-form.css"
+import "../css/login-form.css"
 import { userDetails } from "./UserDetailsContextProvider";
 
 
@@ -23,7 +23,7 @@ function Signup(){
         const localStorageMe = JSON.parse(localStorage.getItem("me"))
 
         if(localStorageMe){
-            fetch(`/users/${localStorageMe.id}`)
+            fetch(`http://localhost:3000/users/${localStorageMe.id}`)
                 .then(res => {
                     if (res.status === 200) {
                         res.json().then(data => {
@@ -45,7 +45,7 @@ function Signup(){
         e.preventDefault()
         setSubmitting(true)
         
-        fetch('/signup', {
+        fetch('http://localhost:3000/signup', {
             method: 'POST',
             headers: {"Content-Type": "application/json", "Accept": "application/json"},
             body: JSON.stringify(userInfo)
