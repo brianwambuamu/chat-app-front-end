@@ -141,7 +141,7 @@ function Login() {
   }
 
   function login() {
-    fetch("/login", {
+    fetch("https://chat-app-back-end-qd27.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(userInfo),
