@@ -125,7 +125,7 @@ function Login() {
     const localStorageMe = JSON.parse(localStorage.getItem("me"));
 
     if (localStorageMe) {
-      fetch(`/users/${localStorageMe.id}`, { mode: "cors" }).then((res) => {
+      fetch(`https://chat-app-back-end-qd27.onrender.com/users/${localStorageMe.id}`, { mode: "cors" }).then((res) => {
         if (res.status === 200) {
           res.json().then((data) => {
             localStorage.setItem("me", JSON.stringify(data));

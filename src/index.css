@@ -12,10 +12,20 @@
 
 
 #signup-container {
-  background-image: url('/src/Assets/image2.jpg');
-  background-size: cover; /* scale the image to cover the entire container */
-  background-position: center; /* center the image within the container */
+  background: linear-gradient(to right bottom, #0a8c7f, #1ca0a7, #4fb3c4, #8fc4d7, #cfead4, #d2f0e4, #d6f7f7);
+  background-size: cover; /* scale the background to cover the entire container */
+  background-position: center; /* center the background within the container */
+  animation: background-animation 20s ease infinite alternate;
 }
+
+@keyframes background-animation {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+
+
+
 
 
 @keyframes heartbeat {

@@ -61,7 +61,7 @@ function MessageInputForm() {
   const [messageContent, setMessageContent] = useState("");
 
   function updateMessages(newMessage) {
-    fetch('/messages', {
+    fetch('https://chat-app-back-end-qd27.onrender.com/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(newMessage)

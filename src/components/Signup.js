@@ -192,7 +192,7 @@ function Signup() {
     e.preventDefault();
     setSubmitting(true);
 
-    fetch("/signup", {
+    fetch("https://chat-app-back-end-qd27.onrender.com/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(userInfo),
@@ -220,8 +220,8 @@ function Signup() {
 
   return (
     <div id="signup-container" class="signup bg-gray-100 min-h-screen flex items-center justify-center">
-  <div class=" container mx-auto max-w-md">
-    <form onSubmit={handleSubmit} class="bg-white p-6 rounded-lg shadow-lg">
+  <div class=" container mx-auto max-w-md bg-white bg-opacity-25 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg p-6">
+    <form onSubmit={handleSubmit} class="bg-white p-6 rounded-lg shadow-lg opacity-80 backdrop-filter backdrop-blur-lg">
           <div className="mb-4">
             <label htmlFor="full_name" className="block text-gray-700 font-bold mb-2">
               Full Name
@@ -323,3 +323,4 @@ function Signup() {
 }
 
 export default Signup;
+
