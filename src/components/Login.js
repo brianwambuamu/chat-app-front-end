@@ -17,7 +17,7 @@ function Login() {
         const localStorageMe = JSON.parse(localStorage.getItem("me"))
 
         if(localStorageMe){
-            fetch(`http://localhost:3000/users/${localStorageMe.id}`, {mode: 'cors'})
+            fetch(`https://chat-app-back-end-qd27.onrender.com/users/${localStorageMe.id}`, {mode: 'cors'})
             .then(res => {
                 if(res.status === 200){
                     res.json().then(data => {
@@ -35,7 +35,7 @@ function Login() {
     }
 
     function login(){
-        fetch('http://localhost:3000//login', {
+        fetch('https://chat-app-back-end-qd27.onrender.com/login', {
             method: 'POST',
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
             body: JSON.stringify(userInfo)

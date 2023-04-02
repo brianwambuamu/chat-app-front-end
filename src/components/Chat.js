@@ -42,7 +42,7 @@ function Chat({message}){
     }
 
     function handleDelete(){
-        fetch(`http://localhost:3000/messages/${message.id}`, {
+        fetch(`https://chat-app-back-end-qd27.onrender.com/messages/${message.id}`, {
             method: 'DELETE',
             headers: {"Content-Type": "application/json", "Accept": "application/json"},
         })
@@ -50,7 +50,7 @@ function Chat({message}){
 
     function updateMessage(){
 
-        fetch(`http://localhost:3000/messages/${message.id}`, {
+        fetch(`https://chat-app-back-end-qd27.onrender.com/messages/${message.id}`, {
             method: 'PATCH',
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
             body: JSON.stringify({content: currentState.messageContent})

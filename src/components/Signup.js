@@ -23,7 +23,7 @@ function Signup(){
         const localStorageMe = JSON.parse(localStorage.getItem("me"))
 
         if(localStorageMe){
-            fetch(`http://localhost:3000/users/${localStorageMe.id}`)
+            fetch(`https://chat-app-back-end-qd27.onrender.com/users/${localStorageMe.id}`)
                 .then(res => {
                     if (res.status === 200) {
                         res.json().then(data => {
@@ -45,7 +45,7 @@ function Signup(){
         e.preventDefault()
         setSubmitting(true)
         
-        fetch('http://localhost:3000/signup', {
+        fetch('https://chat-app-back-end-qd27.onrender.com/signup', {
             method: 'POST',
             headers: {"Content-Type": "application/json", "Accept": "application/json"},
             body: JSON.stringify(userInfo)

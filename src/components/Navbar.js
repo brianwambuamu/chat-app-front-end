@@ -13,7 +13,7 @@ function Navbar(){
 
     function logOut(){
         if (JSON.parse(localStorage.getItem("loggedIn"))){
-            fetch('http://localhost:3000/logout', {
+            fetch('https://chat-app-back-end-qd27.onrender.com/logout', {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
             })

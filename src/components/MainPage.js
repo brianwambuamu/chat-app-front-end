@@ -18,7 +18,7 @@ function MainPage(){
         const localStorageMe = JSON.parse(localStorage.getItem("me"))
 
         if (localStorage.getItem("loggedIn")) {
-            fetch(`http://localhost:3000/users/${localStorageMe.id}`, { mode: 'cors' })
+            fetch(`https://chat-app-back-end-qd27.onrender.com/users/${localStorageMe.id}`, { mode: 'cors' })
                 .then(res => {
                     if (res.status === 200) {
                         res.json().then(data => {
@@ -43,7 +43,7 @@ function MainPage(){
 
         const intervalId = setInterval(() => {
             if (localStorage.getItem("loggedIn")){
-                fetch(`/users/${localStorageMe.id}`)
+                fetch(`https://chat-app-back-end-qd27.onrender.com/users/${localStorageMe.id}`)
                     .then(res => {
                         if (res.status === 200) {
                             res.json().then(data => {
@@ -92,7 +92,7 @@ function MainPage(){
     window.addEventListener('resize', handleResize)
     
     async function getAllUsers() {
-        const res = await fetch('/users', {mode: "cors"})
+        const res = await fetch('https://chat-app-back-end-qd27.onrender.com/users', {mode: "cors"})
             .then(res => res.json())
 
         return res
