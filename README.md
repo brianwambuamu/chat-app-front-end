@@ -17,6 +17,9 @@ To use the content on this repository, ensure you have the following:
 
 To use this repository on your machine requires some simple steps
 
+## Back-end(chat-app-back-end)
+ you can use this app if you want to access my chat-app Api .[see the repo](https://github.com/brianwambuamu/Chat-app-back-end)
+
 ### Alternative One
 
 - Open a terminal / command line interface on your computer
