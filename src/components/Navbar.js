@@ -42,8 +42,8 @@ function Navbar(){
                     </span>
 
                     <span className="second-part">
-                        <span className="second-t">t</span>
-                        ier
+                        <span className="second-t">i</span>
+                        fy
                     </span>
                     </div>
                 <ul>
