@@ -1,0 +1,57 @@
+.login, .signup {
+    height: calc(100vh - 5rem);
+    display: grid;
+    place-items: center;
+    position: relative;
+    top: -2rem;
+}
+
+.login form, .signup form {
+    width: 25rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: solid rgba(255, 255, 255, 0.5) 0.1rem;
+    justify-content: end;
+}
+
+.login .container form, .signup .container form {
+    background-color: var(--primary-color);
+    justify-self: start;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: solid rgba(255, 255, 255, 0.1) 0.1rem;
+    /* border-radius: 0.5rem; */
+}
+
+.login {
+    height: calc(100vh - 5rem);
+    display: grid;
+    place-items: center;
+    position: relative;
+    top: -2rem;
+}
+
+.login label, .signup label {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.login input, .signup input,
+.login textarea, .signup textarea {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 10rem;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+}

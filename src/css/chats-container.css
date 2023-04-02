@@ -1,0 +1,13 @@
+.chats-container {
+    min-height: calc(100vh - 20rem);
+    margin-bottom: 1rem;
+}
+
+.chats-container.desktop {
+    width: calc(62% - 2rem);
+}
+
+.chats-container.mobile {
+    width: calc(min(100%, 25rem));
+}
+

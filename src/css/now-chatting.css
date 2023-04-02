@@ -1,0 +1,51 @@
+.now-chatting {
+    display: flex;
+    background-color: rgb(231, 54, 53);
+    border-radius: 1rem;
+    margin-bottom: 0.2rem;
+    align-items: center;
+}
+
+.now-chatting img {
+    width: 3rem;
+    height: 3rem;
+    min-width: 3rem;
+    min-height: 3rem;
+    padding: 0.3rem;
+    background-color: green;
+    border-radius: 50%;
+    margin: 0.5rem;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+h1, p {
+    font-size: 0.8rem;
+    padding: 0.1rem;
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    min-height: 4rem;
+}
+
+.details.me, .details.they .desktop-view {
+    max-width: 50%;
+}
+
+.they-details, .me-details {
+    padding: 0.5rem;
+}
+
+.me-details {
+    text-align: right;
+}
+
+.now-chatting img.alt {
+    font-size: 0.5rem;
+}

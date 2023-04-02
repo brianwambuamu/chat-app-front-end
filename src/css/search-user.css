@@ -1,0 +1,63 @@
+.search-user {
+    margin-top: 0.7rem;
+}
+
+.search-user form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.search-user form {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.search-user label {
+    color: white;
+    margin-top: 1.3rem;
+    margin-bottom: 0.8rem;
+    margin-left: 1.7rem;
+}
+
+.search-user input {
+    border-radius: 1rem;
+    margin: 0.2rem;
+    outline: none;
+    border: solid var(--secondary-color) 0.1rem;
+    padding: 0.5rem;
+    margin-left: 1.7rem;
+    color: white;
+    font-size: 0.7rem;
+
+    background-color: transparent;
+    width: 80%;
+}
+
+.search-user .matched-users {
+    overflow: hidden;
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+}
+
+.search-user .full-name {
+    background-color: transparent;
+    width: 80%;
+    color: green;
+    margin: 0 0.1rem 0 0.1rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
+    font-size: 10rem;
+}
+
+.search-user .full-name div {
+        display: flex;
+            justify-content: space-between;
+}
+
+.matched-users .full-name:hover {
+    color: var(--secondary-color);
+}

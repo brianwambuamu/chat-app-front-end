@@ -1,0 +1,29 @@
+.message-input {
+    margin-top: 0.7rem;
+    min-height: 3rem;
+}
+
+.message-input form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.message-input input{
+    min-width: calc(80% - 2rem);
+    border-radius: 1rem;
+    margin: 0.2rem;
+    outline: none;
+    border: solid var(--secondary-color) 0.1rem;
+    padding: 0.5rem;
+    color: white;
+    font-size: 0.7rem;
+
+    background-color: transparent;
+}
+
+.message-input .btn {
+    font-size: 0.7rem;
+    min-width: 3rem;
+}
